@@ -1,0 +1,7 @@
+Model,Exceptions,Exception rate (%),Expected exceptions,Kupiec p-value,Christoffersen independence p-value,Conditional coverage p-value,Mean VaR threshold (%),Quantile loss
+GARCH-t,14,1.65877,8.44,0.07891,0.22524,0.1024,-5.87685,0.00087
+GARCH-normal,21,2.48815,8.44,0.00026,0.54587,0.00105,-5.25787,0.00091
+EWMA,24,2.8436,8.44,1e-05,0.71125,6e-05,-5.16141,0.00101
+Historical-static,12,1.4218,8.44,0.24679,0.55605,0.43,-6.67739,0.00117
+Historical-rolling,16,1.89573,8.44,0.01995,0.30453,0.03936,-6.81657,0.00123
+Normal-static,22,2.60664,8.44,9e-05,0.01748,3e-05,-5.39971,0.0013
