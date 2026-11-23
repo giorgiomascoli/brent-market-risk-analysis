@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Locally generated analytical outputs (tracked reference reports remain in reports/)
+results/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
