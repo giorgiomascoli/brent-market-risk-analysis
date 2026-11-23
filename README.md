@@ -1,5 +1,8 @@
 # Brent Market Risk: ARMA, GARCH and Value at Risk
 
+[![Open in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giorgiomascoli/brent-market-risk-analysis/blob/main/notebooks/Brent_Market_Risk_VaR.ipynb)
+[![Python unit tests](https://github.com/giorgiomascoli/brent-market-risk-analysis/actions/workflows/python-tests.yml/badge.svg)](https://github.com/giorgiomascoli/brent-market-risk-analysis/actions/workflows/python-tests.yml)
+
 **A reproducible Python study of one-day, 99% Value at Risk (VaR) for Brent crude oil futures.**
 
 This project examines daily log returns of the Yahoo Finance `BZ=F` continuous Brent futures series, tests their time-series properties, estimates ARMA and GARCH models, and compares **six** VaR forecasting approaches using a chronological out-of-sample backtest.
@@ -94,7 +97,7 @@ The exact table as received is preserved in [`reports/2026-11-23_backtest_summar
 
 ## Reproduce the analysis
 
-**Option A — Google Colab (recommended):** Open [`notebooks/Brent_Market_Risk_VaR.ipynb`](notebooks/Brent_Market_Risk_VaR.ipynb) in Colab and select *Runtime → Run all*. It includes installation and all analysis code; no local Python setup is required.
+**Option A — Google Colab (recommended):** Click **[Open the notebook in Colab](https://colab.research.google.com/github/giorgiomascoli/brent-market-risk-analysis/blob/main/notebooks/Brent_Market_Risk_VaR.ipynb)**, then select *Runtime → Run all*. It includes installation and all analysis code; no local Python setup is required. The published notebook deliberately has no saved execution output; the reference results are shown in the table above and in `reports/`. Running it will generate fresh, independently checkable results.
 
 **Option B — Local computer:**
 
@@ -117,6 +120,8 @@ The script creates the `results/` directory with:
 
 Detailed, locally generated results (`results/`) are ignored by Git; the dated, reported summary (`reports/`) and two comparison charts (`assets/`) are deliberately included for transparency. Run the notebook to generate full daily forecasts, diagnostics and graphics for independent verification.
 
+**Automated checks.** GitHub Actions runs the offline unit test suite on each push and pull request ([workflow](.github/workflows/python-tests.yml)). The tests check exception counting, statistical-test edge cases, and that dynamic forecasts do not use same-day realized returns. The CI tests do not fetch financial data or reproduce the full empirical backtest.
+
 ## Repository layout
 
 ```text
@@ -127,6 +132,8 @@ brent-market-risk-analysis/
 │   └── Brent_Market_Risk_VaR.ipynb  # Colab-ready, standalone notebook
 ├── tests/
 │   └── test_backtesting.py      # Offline unit tests, including no-lookahead checks
+├── .github/workflows/
+│   └── python-tests.yml         # Automated offline tests on GitHub Actions
 ├── assets/
 │   ├── exception_rates_2026-11-23.png
 │   ├── quantile_losses_2026-11-23.png
